@@ -67,7 +67,7 @@ $(function() {
 	});
 	$('.input a').bind('click', submitChat);
 	
-	// initial chat state
+	// Estado inicial del chat
 	updateChat(robot, 'Hola. Intenta escribir algo!');
 
 });
