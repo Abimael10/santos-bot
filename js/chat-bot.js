@@ -1,39 +1,39 @@
 function chatBot() {
 	
-	// current user input
+	// Entrada actual del usuario
 	this.input;
 	
 	/**
-	 * respondTo
+	 * Respond To
 	 * 
-	 * return nothing to skip response
-	 * return string for one response
-	 * return array of strings for multiple responses
+	 * Devolver nada si se pasa la respuesta
+	 * Devolver una string por una respuesta
+	 * Devolver un arreglo de strings por multiples respuestas
 	 * 
 	 * @param input - input chat string
-	 * @return reply of chat-bot
+	 * @return respuesta del chat-bot
 	 */
 	this.respondTo = function(input) {
 	
 		this.input = input.toLowerCase();
 		
-		if(this.match('(hey|hola|hi|hello|buen dia)(\\s|!|\\.|$)'))
+		if(this.match('(hey|hola|buen dia)(\\s|!|\\.|$)'))
 			return "um... hola?";
 		
-		if(this.match('que tal') || this.match('como estas') || this.match('sup') || this.match('how are you'))
+		if(this.match('que tal') || this.match('como estas'))
 			return "todo bien!";
 		
-		if(this.match('l(ol)+') || this.match('(ha)+(h|$)') || this.match('lmao') || this.match('jaja'))
-			return "Qué es tan divertido?";
+		if(this.match('haha') || this.match('jaja'))
+			return "Qué es tan divertido??";
 		
 		if(this.match('^no+(\\s|!|\\.|$)'))
 			return "no seas tan negativo :(";
 		
-		if(this.match('(cya|bye|see ya|ttyl|talk to you later|adios|me voy)'))
-			return ["alright, see you around", "good teamwork!", "Adiós amigo", "Cuidate", "Take care!"];
+		if(this.match('(bye|adios|me voy)'))
+			return ["Adiós amigo", "Cuidate"];
 		
-		if(this.match('(dumb|stupid|is that all|eso es todo|torpe|estupido|bruto)'))
-			return ["hey i'm just a proof of concept", "you can make me smarter if you'd like", "hey solo soy la prueba de un simple concepto", "puedes ayudarme a ser mas inteligente"];
+		if(this.match('(eso es todo?|torpe|estupido|bruto)'))
+			return ["hey solo soy la prueba de un simple concepto!", "puedes ayudarme a ser mas inteligente bro!"];
 		
 		if(this.input == 'noop')
 			return;
